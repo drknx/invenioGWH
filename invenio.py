@@ -25,7 +25,7 @@ def calculate_resultant():
     #     img = Image.open(buf)
     #     return ImageTk.PhotoImage(img)
 
-# Create GUI window
+# gui window      
 root = tk.Tk()
 root.title("Gravesande's Apparatus Simulation")
 root.attributes('-fullscreen', True)
@@ -41,7 +41,6 @@ def draw(event):
     if drawing:
         canvas.create_line(event.x, event.y, event.x+1, event.y+1, fill='white', width=2, tags=('user_drawn',))
 
-# Create canvas for drawing
 canvas = Canvas(root, width=root.winfo_screenwidth(), height=root.winfo_screenheight(), bg="#23272a", highlightthickness=0)
 canvas_width = root.winfo_screenwidth()
 canvas_height = root.winfo_screenheight()
@@ -49,12 +48,9 @@ canvas.pack()
 canvas.bind('<B1-Motion>', draw)
 drawing = False
 
-# Draw the pulleys
+# pulle
 canvas.create_oval(canvas_width*0.35, canvas_height*0.1, canvas_width*0.4, canvas_height*0.15, outline="white", fill="gray", width=5)
 canvas.create_oval(canvas_width*0.6, canvas_height*0.1, canvas_width*0.65, canvas_height*0.15, outline="white", fill="gray", width=5)
-
-# Draw the strings
-# Draw angle arc to represent 'C'
 
 canvas.create_text(canvas_width*0.5, canvas_height*0.65, text="C", font=font_style, fill="white", anchor='center')
 
@@ -86,7 +82,7 @@ tk.Label(root, text="Enter Angle (degrees):", font=font_style, fg="white", bg="#
 entry_angle = tk.Entry(root, font=font_style, bg="#2c2f33", fg="white", insertbackground="white", highlightbackground="#2c2f33", highlightcolor="#7289da")
 entry_angle.place(x=50, y=290, width=200, height=40)
 
-# Render and display LaTeX equation
+# latex formula (doesnt work)
 latex_formula = "R = \sqrt{F_1^2 + F_2^2 - 2F_1F_2 cosC}"
 
 # eqn_image = render_latex(latex_formula)
